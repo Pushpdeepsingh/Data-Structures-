@@ -1,0 +1,7 @@
+SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* llist, int data) {
+   struct SinglyLinkedListNode* t = llist;
+   SinglyLinkedListNode* new_node=(struct SinglyLinkedListNode*)malloc(sizeof(struct SinglyLinkedListNode));
+   new_node->data=data;
+   new_node->next=t;
+   return new_node;
+}
