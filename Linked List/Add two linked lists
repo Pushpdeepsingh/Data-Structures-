@@ -1,0 +1,105 @@
+#include<math.h>
+
+struct Node* addTwoLists(struct Node* first, struct Node* second)
+{
+    // code here
+    int count_1=0;int count_2=0;
+    struct Node* a=first;
+    struct Node* b=second;
+    while(a){
+        count_1++;
+        a=a->next;
+    }
+    while(b){
+        count_2++;
+        b=b->next;
+    }
+    int x=1;int y=1;struct Node* p=first;
+    struct Node* q=second;
+    for(int i=0;i<=count_1-1;i++){
+    
+        if(i==0){
+             x=x*pow(10,0);
+            x=x*p->data;
+        }
+        else{
+             x=x*pow(10,1);
+            x=x+p->data;
+        }
+        p=p->next;
+    }
+    for(int i=0;i<=count_2-1;i++){
+    
+        if(i==0){
+            y=y*pow(10,0);
+            y=y*q->data;
+        }
+        else{
+            y=y*pow(10,1);
+            y=y+q->data;
+        }
+        q=q->next;
+    }
+    int sum=x+y;
+    struct Node *f=first;
+    struct Node *s=second;
+    int l=count_1;
+    int h=count_2;
+    int aa[l];
+    int bb[h];
+    int ii=0;
+    int jj=0;
+    if(count_1>=count_2){
+        while(sum && f){
+            int k =sum%10;
+            f->data=k;
+            aa[ii]=k;
+            sum=sum/10;
+            ii++;
+           f=f->next;
+        }
+       // return first;
+     //  for(int i=ii-1;i>=0;i--){
+        //   f->data=aa[i];
+      //     f=f->next;
+      // }
+      
+      struct Node *c=first;
+      struct Node *n=first;
+      struct Node *p=NULL;
+      while(c){
+      n=n->next;
+      c->next=p;
+      p=c;
+      c=n;}
+       //return first;
+       return p;
+    }
+    else{
+         while(sum && s){
+            int k =sum%10;
+            s->data=k;
+            bb[jj]=k;
+            sum=sum/10;
+           // jj++;
+            s=s->next;
+        }
+        //for(int i=jj-1;i>=0;i--){
+         //  s->data=aa[i];
+         //  s=s->next;
+       //}
+        
+      struct Node *c=second;
+      struct Node *n=second;
+      struct Node *p=NULL;
+      while(c){
+      n=n->next;
+      c->next=p;
+      p=c;
+      c=n;}
+       //return first;
+       return p;
+        //return second;
+    }
+    
+}
