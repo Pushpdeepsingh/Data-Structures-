@@ -1,0 +1,20 @@
+Node* segregate(Node *head) {
+    int one =0;
+    int two =0;
+    int zero=0;
+    struct Node*p=head;
+    while(p){
+        if(p->data==0){zero++;}
+         if(p->data==1){one++;}
+          if(p->data==2){two++;}
+          p=p->next;
+    }
+    struct Node*q=head;
+    for(int i=1;i<=zero;i++){q->data=0;q=q->next;}
+    for(int i=1;i<=one;i++){q->data=1;q=q->next;}
+    for(int i=1;i<=two;i++){q->data=2;q=q->next;}
+    
+    return head;
+    // Add code here
+    
+}
