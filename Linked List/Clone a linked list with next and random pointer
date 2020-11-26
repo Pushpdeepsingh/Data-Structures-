@@ -1,0 +1,25 @@
+Node *copyList(Node *head) {
+    struct Node *t =head;
+    struct Node *c=new Node(t->data);
+    struct Node *s =c;
+    while(t->next){
+        t=t->next;
+        struct Node *new_node=new Node(t->data);
+        s->next=new_node;
+       // new_node->data=t->data;
+        s=s->next;
+    }
+    struct Node *p=head;
+    struct Node *q=c;
+    while(p){
+        q->arb=p;
+        p=p->next;
+        q=q->next;
+    }
+    struct Node *x=c;
+    while(x){
+        x->arb=x->arb->arb;
+        x=x->next;
+    }
+    return c;
+}
