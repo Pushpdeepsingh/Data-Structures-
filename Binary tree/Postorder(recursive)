@@ -1,0 +1,19 @@
+
+def postorderUtil (root, res):
+    if root is None: # check if the root is none
+        return
+    
+    
+    postorderUtil(root.left, res) # do in order of left child
+    postorderUtil(root.right, res) # do in order of right child
+    res.append (root.data)
+def postOrder(root):
+    res = []
+    postorderUtil (root, res)
+    return res
+Related Problems
+Problem Name 	Submissions 	Accuracy
+Kth smallest element 	164437 	58.64
+Maximum money 	12907 	55.08
+Preorder to Postorder 	17018 	49.14
+Minimum difference pair 	11836 	52.76
