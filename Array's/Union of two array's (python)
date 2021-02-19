@@ -1,0 +1,6 @@
+def doUnion(a,n,b,m):
+    a=set(a)
+    b=set(b)
+    return len(a.union(b))
+    
+    #first we have to convert the list to a set to apply union operation
